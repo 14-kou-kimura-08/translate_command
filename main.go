@@ -3,11 +3,13 @@ package main
 import (
   "flag"
   "fmt"
+  "github.com/atotto/clipboard"
   "io/ioutil"
   "net/http"
   "net/url"
   "strings"
 )
+
 
 func main() {
   flag.Parse()
@@ -28,5 +30,6 @@ func main() {
     fmt.Println(err)
   }
 
+  clipboard.WriteAll(string(byteArray))
   fmt.Println(string(byteArray))
 }
